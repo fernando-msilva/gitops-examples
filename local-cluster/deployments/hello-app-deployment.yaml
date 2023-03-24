@@ -1,0 +1,62 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: hello-app
+  labels:
+    name: hello-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-app-deployment
+  namespace: hello-app
+  labels:
+    app: hello-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app-label: hello-app-pod
+  template:
+    metadata:
+      labels:
+        app-label: hello-app-pod
+    spec:
+      containers:
+        - name: hello-app-container
+          image: hello
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-app-service
+  namespace: hello-app
+spec:
+  selector:
+    app-label: hello-app-pod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-app-ingress
+  namespace: hello-app
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /.*
+            backend:
+              service:
+                name: hello-app-service
+                port:
+                  number: 80
