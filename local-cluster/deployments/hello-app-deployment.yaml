@@ -48,13 +48,14 @@ metadata:
   name: hello-app-ingress
   namespace: hello-app
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - http:
+    - host: hello.local
+      http:
         paths:
           - pathType: Prefix
-            path: /.*
+            path: /
             backend:
               service:
                 name: hello-app-service
