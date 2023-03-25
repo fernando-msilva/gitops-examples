@@ -16,6 +16,7 @@ func HelloServer(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	response := make(map[string]string)
 	response["hello"] = r.URL.Path[1:]
+	response["version"] = "v2"
 	jsonResponse, err := json.Marshal(response)
 	if err != nil {
 		log.Fatalf("An error occured")

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/fernando-msilva/gitops-examples.git
+    targetRevision: HEAD
+    path: local-cluster/deployments
+  destination:
+    server: https://172.18.0.4:6443
+    namespace: hello-app
+  syncPolicy:
+    automated: {}
