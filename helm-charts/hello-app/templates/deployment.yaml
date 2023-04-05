@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hello-app.fullname" . }}-deployment
+  namespace: {{ include "hello-app.namespace" . }}
+  labels:
+    {{- include "hello-app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      {{- include "hello-app.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "hello-app.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ include "hello-app.fullname" . }}-pod
+          image: {{ .Values.deployment.image }}
+          ports:
+            - containerPort: {{ .Values.deployment.containers.containerPort }}
+          imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}

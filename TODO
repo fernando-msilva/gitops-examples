@@ -1,0 +1,3 @@
+Criar tutorial de instalação do argocd no cluster local
+
+Criar as branchs com as alterações de código para as fases evolutivas do laboratório (deploy do argocd app via helm ao invés de deployment file)

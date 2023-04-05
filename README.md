@@ -10,7 +10,7 @@ Antes de tudo adicione esses dois registros no seu arquivo `/etc/hosts`
 Execute o seguinte comando para subir o cluster
 
 ```bash
-$ kind create cluster --config kind.yaml
+$ kind create cluster --config local-cluster/kind.yaml
 ```
 
 Para instalar o ingress controller no cluster execute o comando abaixo:
@@ -25,19 +25,19 @@ O ingress levará um certo tempo para ser totalmente configurado. Para validar s
 $ kubectl wait --namespace ingress-nginx \
   --for=condition=ready pod \
   --selector=app.kubernetes.io/component=controller \
-  --timeout=1500s
+  --timeout=2000s
 ```
 
 Crie a imagem da api de exemplo com o comando abaixo:
 
 ```bash
-$ docker build -t hello ./application
+$ docker build -t hello:v1 ./api
 ```
 
 Para carregar a imagem local dentro do cluster você pode executar o seguinte comando:
 
 ```bash
-$ kind load docker-image --name gitops-local-lab hello
+$ kind load docker-image --name gitops-local-lab hello:v1
 ```
 
 Faça o deploy da aplicação com o seguinte comando:
@@ -56,13 +56,19 @@ Teste a aplicação acessando a seguinte URL:
 
 ```bash
 $ curl http://hello.local/world
-{"hello":"world"}%
+{"hello":"world","version":"v1"}
 
 $ curl http://hello.local/test
-{"hello":"test"}%
+{"hello":"test","version":"v1"}
 
 $ curl http://hello.local/there
-{"hello":"there"}%
+{"hello":"there","version":"v1"}
+```
+
+Agora iremos remover o deployment criado via ubectl e refazer o dpeloy via ArgoCD.
+
+```bash
+$ kubectl delete -f deployments
 ```
 
 ## Instalando o ArgoCD
@@ -72,10 +78,10 @@ Crie um namespace chamado argocd e execute o deploy do ArgoCD com os seguintes c
 ```bash
 $ kubectl create namespace argocd
 
-$ helm install --namespace argocd --values ./argocd/values.yaml argocd ./argocd
+$ helm install --namespace argocd --values ./helm-charts/argocd/values.yaml argocd ./helm-charts/argocd
 ```
 
-Tente acessar o painel web do ArgoCD através do endereço `http://argocd.local`. É possível que o retorno seja
+Tente acessar o painel web do ArgoCD através do endereço `http://argocd.local`. Caso o retorno seja um erro 503 aguarde alguns minutos até que os recursos sejam devidamente criados.
 
 O usuário padrão da instalação é `admin`. Para recuperar a senha padrão execute o seguinte comando:
 
@@ -83,7 +89,7 @@ O usuário padrão da instalação é `admin`. Para recuperar a senha padrão ex
 $ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
 ```
 
-Instale o cli do ArgoCD com os comandosa abaixo:
+Instale o cli do ArgoCD com os comandos abaixo:
 
 ```bash
 $ curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64

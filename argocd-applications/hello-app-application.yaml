@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/fernando-msilva/gitops-examples.git
     targetRevision: HEAD
-    path: local-cluster/deployments
+    path: deployments
   destination:
     server: https://172.18.0.4:6443
     namespace: hello-app

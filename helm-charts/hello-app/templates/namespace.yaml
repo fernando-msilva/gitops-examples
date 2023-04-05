@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ include "hello-app.namespace" . }}
+  labels:
+    {{- include "hello-app.labels" . | nindent 4 }}
