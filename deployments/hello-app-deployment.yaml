@@ -13,7 +13,7 @@ metadata:
   labels:
     app: hello-app
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app-label: hello-app-pod
