@@ -1,0 +1,6 @@
+[book]
+authors = ["fernando-msilva"]
+language = "pt"
+multilingual = false
+src = "src"
+title = "Thevops book: Exemplos didáticos de GitOps"
