@@ -26,9 +26,12 @@ Irei organizar os conteúdos nos capítulos da seguinte forma:
     
 * Exemplos reais
     - Descrição da aplicabilidade real do conceito em um ambiente produtivo
+
 * Materiais de estudos
     - Referência de conteúdos externos que podem ajudar a compreender melhor
+
 * Laboratório
     - Projeto prático que irei construir para aplicar os conceitos estudados no capítulo
+
 * Para ouvir lavando a casa
     - Parte mais importante de todo capítulo, onde deixarei alguma indicação de música pra ouvir durante os estudos, ou até mesmo pra lavar a casa
