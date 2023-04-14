@@ -1,5 +1,11 @@
 # Capítulo 1
 
-## O que é GitOps?
+## Introdução
 
-!["Imagem "](img/hello_there.gif)
+## Exemplos reais
+
+## Materiais de estudo
+
+## Laboratório
+
+## Para ouvir lavando a casa
