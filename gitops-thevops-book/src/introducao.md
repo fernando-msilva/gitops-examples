@@ -11,7 +11,7 @@
 # Introdução
 
 <p align="justify">
-É inegável o fato de que hoje temos fácil acesso a informações valiosas quando decidimos aprender uma nova técnica ou ferramenta. As documentações, fóruns, webnars, cursos, são fontes ricas de conhecimento teórico essencial para construir uma base sólida sob o objeto de estudo. Entretanto, é <b>muito comum</b> que no início dos estudos, de forma geral, nos atenhamos ao aprendizado do <b>conhecimento explícito</b> ( Aquele que é derivado de linguagem formal e sistemática ), e o <b>conhecimento tácito</b> ( Aquele obtido através da experiência ) é tido como algo possível de se obter apenas quando de fato estiver trabalhando com aquela técnica ou ferramenta.
+É inegável o fato de que hoje temos fácil acesso a informações valiosas quando decidimos aprender uma nova técnica ou ferramenta. As documentações, fóruns, webnars, cursos, são fontes ricas de conhecimento teórico essencial para construir uma base sólida sob o objeto de estudo. Entretanto, é <b>muito comum</b> que no início dos estudos, de forma geral, nos atenhamos ao aprendizado do <b>conhecimento explícito</b> ( Aquele que é derivado de linguagem formal e sistemática ), e o <b>conhecimento tácito</b> ( Aquele obtido através da experiência ) é tido como algo possível de se obter apenas quando de fato estiver utilizando a ferramenta profissionalmente.
 </p>
 
 <p align="justify">
