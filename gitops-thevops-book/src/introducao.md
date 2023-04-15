@@ -11,11 +11,11 @@
 # Introdução
 
 <p align="justify">
-É inegável o fato de que hoje temos fácil acesso a informações valiosas quando decidimos aprender uma nova técnica ou ferramenta. As documentações, fóruns, webnars, cursos, são fontes ricas de conhecimento teórico essencial para construir uma base sólida sob o objeto de estudo. Entretanto, é <b>muito comum</b> que no início dos estudos, de forma geral, nos atenhamos ao aprendizado do <b>conhecimento explícito</b> ( Aquele que é derivado de linguagem formal e sistemática ), e o <b>conhecimento tácito</b> ( Aquele obtido através da experiência ) é tido como algo possível de se obter apenas quando de fato estiver utilizando a ferramenta profissionalmente.
+É inegável o fato de que hoje temos fácil acesso a informações valiosas quando decidimos aprender uma nova técnica ou ferramenta. As documentações, fóruns, webnars, cursos, são fontes ricas de conhecimento teórico essencial para construir uma base sólida sob o objeto de estudo. Entretanto, é <b>muito comum</b> que no início dos estudos, de forma geral, nos atenhamos ao aprendizado do <b>conhecimento explícito</b> ( Aquele que é derivado de linguagem formal e sistemática ), e o <b>conhecimento tácito</b> ( Aquele obtido através da experiência ) é tido como algo possível de se obter apenas quando realmente estiver utilizando a ferramenta profissionalmente.
 </p>
 
 <p align="justify">
-Essa afirmação pode ser válida em diversas áreas do conhecimento, porém na computação, pelos benefícios que temos em conseguir replicar simular e virtualizar cenários, a experiência na utilização de certos recursos pode ser obtida através de projetos pessoais, desde que esses projetos tragam desafios similares aos enfrentados nos ambientes produtivos. E é justamente esse o objetivo deste livro, trazer cenários de casos de uso reais de quando se adota <b>GitOps</b>.
+Essa afirmação pode ser válida em diversas áreas do conhecimento, porém na computação, pelos benefícios que temos em conseguir replicar, simular e virtualizar cenários, a experiência na utilização de certos recursos pode ser obtida através de projetos pessoais, desde que esses projetos tragam desafios similares aos enfrentados nos ambientes produtivos. E é justamente esse o objetivo deste livro, trazer cenários de casos de uso reais de quando se adota <b>GitOps</b>.
 </p>
 
 <p align="justify">
