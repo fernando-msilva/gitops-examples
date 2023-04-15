@@ -1,11 +1,11 @@
 # Capítulo 1
 
-## Introdução
+## O que é GitOps?
 
-## Exemplos reais
+## Casos de uso
 
-## Materiais de estudo
+## Prós e contras
 
-## Laboratório
+## Preparando ambiente de estudo
 
-## Para ouvir lavando a casa
+## Referências e recomendações
