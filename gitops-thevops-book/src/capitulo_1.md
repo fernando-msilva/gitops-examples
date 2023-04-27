@@ -56,7 +56,7 @@ Um commit do git é uma excelente forma de se ter um snapshot imultável de toda
 
 ### Pull automático
 
-<p align="center">
+<p align="justify">
 O caminho típico de uma atualização de ambiente é que o desenvolvedor faça um commit e envie as modificações para produção.
 </p>
 
@@ -65,7 +65,7 @@ O caminho típico de uma atualização de ambiente é que o desenvolvedor faça 
 </p>
 
 
-<p align="center">
+<p align="justify">
 Porém com GitOps o caminho é o contrário. Em GitOps existe um <b>agente</b> que intermedia a interação entre o repositório git e o ambiente de produção, onde esse agente escuta por qualquer alteração no repositório da aplicação e mescla essas atualizações no ambiente de produção.
 </p>
 
