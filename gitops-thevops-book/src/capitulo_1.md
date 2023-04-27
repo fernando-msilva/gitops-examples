@@ -14,8 +14,12 @@ Sabe quando você coloca uma panela de angu com queijo na geladeira e <b>outra p
 Imagina como seria bom se mesmo quando outra pessoa comesse ela voltasse <b>automagicamente</b> pra geladeira da mesma forma que você deixou. De forma muito simplificada este é um dos benefícios ao utilizar <b>GitOps</b>.
 </p>
 
+<p align="center">
+    <img src="img/julius-automagico.gif" />
+</p>
+
 <p align="justify">
-Obviamente GitOps aborda é um tema que aborda mais princípios do que essa analogia em si retrata, porém ela é um bom norte para entender os seus benefícios. Nos parágrafos seguintes você possivelmente irá entender melhor o que a analogia do angu com queijo quer dizer.
+Obviamente GitOps é um tema que aborda mais princípios do que essa analogia em si retrata, porém ela é um bom norte para entender os seus benefícios. Nos parágrafos seguintes você possivelmente irá entender melhor o que a analogia do angu com queijo quer dizer.
 </p>
 
 <p align="justify">
@@ -36,18 +40,63 @@ Vamos ver com um pouco mais de detalhe cada um desses pontos.
 
 ### Declarativo
 
+<p align="justify">
+O princípio básico do GitOps é que toda aplicação e componentes necessários para sua execução devem estar descritos via Git. O <b>estado desejado</b> deve ser aquele que está no repositório Git.
+</p>
+
 ### Versionado e imutável
+
+<p align="justify">
+Um commit do git é uma excelente forma de se ter um snapshot imultável de toda uma hierarquia de arquivos, e isso o torna o armazenamento ideal para se utilizar em GitOps. Toda alteração feita no git automaticamente substitui <b>todo o estado anterior</b> ao invés de somente realizar apenas uma mudança, e sempre que essa substituição acontece é criada uma nova versão do estado.
+</p>
 
 <p align="center">
     <img src="img/julius-devopeiro.gif" />
 </p>
 
-### Automaticamente atualizado
+### Pull automático
+
+<p align="center">
+O caminho típico de uma atualização de ambiente é que o desenvolvedor faça um commit e envie as modificações para produção.
+</p>
+
+<p align="center">
+    <img src="img/fluxo-tradicional.png" />
+</p>
+
+
+<p align="center">
+Porém com GitOps o caminho é o contrário. Em GitOps existe um <b>agente</b> que intermedia a interação entre o repositório git e o ambiente de produção, onde esse agente escuta por qualquer alteração no repositório da aplicação e mescla essas atualizações no ambiente de produção.
+</p>
+
+<p align="center">
+    <img src="img/fluxo-gitops.png" />
+</p>
+
 
 ### Continuamente sincronizado
 
+<p align="justify">
+Mudanças nos sistemas são constantes, e com isso existe a necessidade de se validar continuamente o estado das aplicações em produção para que elas reflitam o que está descrito no git.
+</p>
+
 <p align="center">
     <img src="img/julius-devopeiro-2.gif" />
+</p>
+
+<p align="justify">
+O agente de GitOps é responsável por monitorar de tempos em tempos o estado das aplicações no ambiente de produção e comparar com o estado desejado armazenado no git. Essa ação automática de sincronismo além de evitar a persistência de alterações feitas diretamente no ambiente de produção nos dá a garantia de que para saber o que está sendo executado em produção basta olhar o que está no git.
+</p>
+
+<br>
+
+<p align="center">
+<b><i>Quando houver diferença entre o estado desejado e o ambiente de produção, eu vou estar lá.</i></b>
+</p>
+
+
+<p align="center">
+    <img src="img/julius-forcando.gif" />
 </p>
 
 ## Casos de uso
